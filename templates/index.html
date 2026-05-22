@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Código Aleatório</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <style>
+        body{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(fundoroxocomletras.jpg);
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+            display: inline-block;
+            width: 100%; 
+            color:#f0f0f0
+            
+        }
+
+        
+        input[type=checkbox]{
+         margin-right: 10px;  
+         accent-color: blueviolet;
+
+        }
+        
+        .opcoes{
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button{
+            background-color: blueviolet;
+            margin-top: 15px;
+            width: 50%; 
+            padding:8px;
+            border-radius: 5px;
+            cursor: pointer; 
+            border: none;
+            display: flex;
+            margin: 15px auto 0 auto;
+            justify-content:center;
+        }
+        button:hover{
+            transform: scale(1.1);
+            background-color: rgb(124, 10, 231);
+            
+        }
+        p {
+            margin-bottom:10px;
+           font-weight: 1000;
+        }
+        .resultado {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f3f4f6;
+            border: 2px dashed blueviolet;
+            border-radius: 5px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 18px;
+            word-break: break-all;
+        }
+
+        .tamanito{
+            margin-top: 10px; 
+            margin-bottom: 10px;
+        }
+
+        input[type=number] {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+
+    </style>
+    <h1>Gerador de senhas do Nicolas</h1>
+        
+        <form class="opcoes" method="POST" action="/">
+        <p>selecione as características da senha</p>
+
+        <input type="checkbox" id="maiusculas" name="maiusculas" >
+        <label for="maiusculas">Maiúsculas</label>
+        <br>
+        <input type="checkbox" id="minusculas" name="minusculas">
+        <label for="minusculas">mínusculas</label>
+        <br>
+        <input type="checkbox" id="caracteresespeciais" name="caracteresespeciais" >
+        <label for="caracteresespeciais">Caracteres Especias</label> 
+        <br>
+        <input type="checkbox" id="numeros" name="numeros">
+        <label for="numeros">Números</label>  
+        <br>
+
+        <div class="tamanito">
+        <label for="tamanho" class="tamanho">Tamanho da senha:</label>
+        <input type="number" id="tamanho" name="tamanho" min="4" max="30" value="12">
+        </div>
+
+        <button type="submit">Gerar Senha</button>  
+
+    
+        {% if senha %}
+            <div class="resultado">
+                <strong>{{ senha }}</strong>
+            </div>
+        {% endif %}
+    </form>
+
+    
+</body>
+</html>
