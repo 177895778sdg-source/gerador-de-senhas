@@ -3,8 +3,7 @@ import string
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-
-# Ajustamos a ordem dos parâmetros para ficar mais organizada
+
 def gerarsenha(tamanho, usar_maiusculas, usar_minusculas, usar_especiais, usar_numero):
     caracteres = ""
     
